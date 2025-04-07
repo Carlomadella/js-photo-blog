@@ -59,3 +59,21 @@ img{
     top: -7px;
     left: 50%;
 }
+
+@media screen and (max-width: 768px) {
+    #titolo{
+        font-family: "Edu Tas Beginner", sans-serif;
+        font-size: 60px;
+        font-weight: 600;
+        margin-bottom: 0;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #titolo{
+        font-family: "Edu Tas Beginner", sans-serif;
+        font-size: 50px;
+        font-weight: 500;
+        margin-bottom: 0;
+    }
+}
