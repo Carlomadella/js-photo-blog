@@ -7,5 +7,22 @@ const card =  document.getElementById("cards")
 axios.get("https://lanciweb.github.io/demo/api/pictures/").then((resp) =>{
     // salvo in una variabile i dati che ricevo dalla richiesta API
     let cardContent= resp.data
+
+    // inizializzo la funzione per la creazione delle card 
+    const createMyCards = (cardContent) => {
+    let myCard = `<div class="col-3 mx-3 my-3 myCard bg-white">
+                <div class="image">
+                    <img class="pin" src="./img/pin.svg" alt="">
+                    <img src="${cardContent.url}" class="pt-2" alt="">
+                </div>
+                <div class="text pt-3">
+                    <p class="text-secondary mb-0">${cardContent.date}</p>
+                    <h5 class="">${cardContent.title}</h5>
+                </div>
+            </div>`
+            return myCard
+            
+}
+
 })
 
