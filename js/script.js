@@ -21,8 +21,15 @@ axios.get("https://lanciweb.github.io/demo/api/pictures/").then((resp) =>{
                 </div>
             </div>`
             return myCard
-            
-}
+    }
 
+    // creo la funzione per renderizzare le card create in precedenza
+    const renderMyCards = (cardContent) => {
+    // creo la variabile che contiene le varie cards create
+    let visibleCard = "";
+    //ciclo l'array di oggetti e concateno la stringa appena creata con la funzione richiamata perchè all'interno della stessa chiamata 
+    cardContent.forEach((item) => {
+        visibleCard += createMyCards(item)
+    })}
+    
 })
-
