@@ -3,3 +3,15 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+header{
+    text-align: center;
+    width: 100%;
+    background-image: url(../img/wall.png);
+}
+
+h1{
+    font-family: "Edu Tas Beginner", sans-serif;
+    font-size: 70px;
+    font-weight: 800;
+}
