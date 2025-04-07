@@ -30,6 +30,10 @@ axios.get("https://lanciweb.github.io/demo/api/pictures/").then((resp) =>{
     //ciclo l'array di oggetti e concateno la stringa appena creata con la funzione richiamata perchè all'interno della stessa chiamata 
     cardContent.forEach((item) => {
         visibleCard += createMyCards(item)
-    })}
-    
-})
+    })
+    //stampo a video all'interno del div richiamato tramite id la variabile contenente il blocco di codice delle card
+    card.innerHTML = visibleCard
+    }
+    // richiamo la funzione
+    renderMyCards(cardContent)
+});
