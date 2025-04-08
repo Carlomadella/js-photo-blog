@@ -2,6 +2,7 @@
 const card =  document.getElementById("cards")
 const overlay = document.getElementById("overlay")
 const myButton = document.getElementById("button")
+const renderedImage = document.getElementById("cardImage")
 
 // creata richiesta AJAX
 axios.get("https://lanciweb.github.io/demo/api/pictures/").then((resp) =>{
@@ -13,7 +14,7 @@ axios.get("https://lanciweb.github.io/demo/api/pictures/").then((resp) =>{
     let myCard = `<div class="col-lg-3 col-md-5 col-sm-12 mx-3 my-3 myCard bg-white">
                 <div class="image">
                     <img class="pin" src="./img/pin.svg" alt="">
-                    <img src="${cardContent.url}" class="pt-2" alt="">
+                    <img id="cardImage" src="${cardContent.url}" class="pt-2" alt="">
                 </div>
                 <div class="text pt-3">
                     <p class="text-secondary mb-0">${cardContent.date}</p>
@@ -40,21 +41,21 @@ axios.get("https://lanciweb.github.io/demo/api/pictures/").then((resp) =>{
 });
 
 // OVERLAY
-    // al click dell' immagine si apre l'overlay
-    card.addEventListener("click", (element) => {
-        overlay.classList.remove("d-none");
-        myButton.classList.remove("d-none");
-    
-        element = visibleCard
-    });
-    
-    // al click del bottone si chiude l'overlay
-    myButton.addEventListener("click", element => {
-        overlay.classList.add("d-none");
-        myButton.classList.add("d-none");
+// al click dell' immagine si apre l'overlay
+card.addEventListener("click", (element) => {
+    overlay.classList.remove("d-none");
+    myButton.classList.remove("d-none");
 
-        element = myButton;
-    })
+    element = renderedImage
+});
 
 
+
+// al click del bottone si chiude l'overlay
+myButton.addEventListener("click", (element) => {
+overlay.classList.add("d-none");
+myButton.classList.add("d-none");
+
+element = myButton;
+});
 
