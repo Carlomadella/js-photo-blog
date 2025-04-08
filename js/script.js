@@ -34,10 +34,27 @@ axios.get("https://lanciweb.github.io/demo/api/pictures/").then((resp) =>{
     //stampo a video all'interno del div richiamato tramite id la variabile contenente il blocco di codice delle card
     card.innerHTML = visibleCard
     }
+
     // richiamo la funzione
     renderMyCards(cardContent)
 });
 
 // OVERLAY
+    // al click dell' immagine si apre l'overlay
+    card.addEventListener("click", (element) => {
+        overlay.classList.remove("d-none");
+        myButton.classList.remove("d-none");
+    
+        element = visibleCard
+    });
+    
+    // al click del bottone si chiude l'overlay
+    myButton.addEventListener("click", element => {
+        overlay.classList.add("d-none");
+        myButton.classList.add("d-none");
+
+        element = myButton;
+    })
+
 
 

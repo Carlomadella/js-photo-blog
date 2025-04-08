@@ -62,15 +62,27 @@ img{
 
 /* OVERLAY */
 #overlay {
-    position: absolute;
-    /* position: fixed; resta bloccato in alto sulla pagina */
-    /* display: none; diamo display none per visualizzarlo in un secondo momento quando vogliamo noi */
-    width: 100%; 
-    height: 100%;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    position: fixed; /* Sit on top of the page content */
+    width: 80%; /* Full width (cover the whole page) */
+    height: 80%; /* Full height (cover the whole page) */
+    border: 10px solid white;
+    top: 13%;
+    left: 10%;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+}
+
+#button{
+    border: none;
+    background-color: red;
+    position: fixed; /* Sit on top of the page content */
+    width: 15%; /* Full width (cover the whole page) */
+    height: 5%; /* Full height (cover the whole page) */
+    top: 95%;
+    left: 43%;
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
 }
 
 /* MEDIA QUERIES */
