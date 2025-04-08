@@ -1,7 +1,7 @@
-// Milestone 3
-// Inseriamo un foglio JavaScript ed effettuiamo una chiamata AJAX all’API, sfruttando la risposta per generare dinamicamente in pagina una serie di foto!
-
+// mi creo le variabili che richiamano elementi del dom
 const card =  document.getElementById("cards")
+const overlay = document.getElementById("overlay")
+const myButton = document.getElementById("button")
 
 // creata richiesta AJAX
 axios.get("https://lanciweb.github.io/demo/api/pictures/").then((resp) =>{
@@ -10,7 +10,7 @@ axios.get("https://lanciweb.github.io/demo/api/pictures/").then((resp) =>{
 
     // inizializzo la funzione per la creazione delle card 
     const createMyCards = (cardContent) => {
-    let myCard = `<div class="col-3 col-md-5 col-sm-12 mx-3 my-3 myCard bg-white">
+    let myCard = `<div class="col-lg-3 col-md-5 col-sm-12 mx-3 my-3 myCard bg-white">
                 <div class="image">
                     <img class="pin" src="./img/pin.svg" alt="">
                     <img src="${cardContent.url}" class="pt-2" alt="">
@@ -37,3 +37,7 @@ axios.get("https://lanciweb.github.io/demo/api/pictures/").then((resp) =>{
     // richiamo la funzione
     renderMyCards(cardContent)
 });
+
+// OVERLAY
+
+

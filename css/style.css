@@ -60,6 +60,21 @@ img{
     left: 50%;
 }
 
+/* OVERLAY */
+#overlay {
+    position: absolute;
+    /* position: fixed; resta bloccato in alto sulla pagina */
+    /* display: none; diamo display none per visualizzarlo in un secondo momento quando vogliamo noi */
+    width: 100%; 
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+/* MEDIA QUERIES */
+
 @media screen and (max-width: 768px) {
     #titolo{
         font-family: "Edu Tas Beginner", sans-serif;
