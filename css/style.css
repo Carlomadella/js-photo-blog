@@ -63,26 +63,26 @@ img{
 /* OVERLAY */
 #overlay {
     position: fixed; /* Sit on top of the page content */
-    width: 80%; /* Full width (cover the whole page) */
-    height: 80%; /* Full height (cover the whole page) */
+    width: 60%; 
+    height: 80%;
     border: 10px solid white;
     top: 13%;
-    left: 10%;
-    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    left: 20%;
+    background-color: rgba(0,0,0,0.5);
     z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
-    cursor: pointer; /* Add a pointer on hover */
 }
+
+
 
 #button{
     border: none;
     background-color: red;
     position: fixed; /* Sit on top of the page content */
-    width: 15%; /* Full width (cover the whole page) */
-    height: 5%; /* Full height (cover the whole page) */
+    width: 15%; 
+    height: 5%;
     top: 95%;
     left: 43%;
     z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
-    cursor: pointer; /* Add a pointer on hover */
 }
 
 /* MEDIA QUERIES */

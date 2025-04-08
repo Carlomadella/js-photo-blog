@@ -41,21 +41,22 @@ axios.get("https://lanciweb.github.io/demo/api/pictures/").then((resp) =>{
 });
 
 // OVERLAY
-// al click dell' immagine si apre l'overlay
-card.addEventListener("click", (element) => {
-    overlay.classList.remove("d-none");
-    myButton.classList.remove("d-none");
+// al click dell'immagine si apre l'overlay e mostra l'immagine selezionata
+card.addEventListener("click", (event) => {
+    if (event.target.id === "cardImage") {    //target è una proprietà degli eventi che prende l'elemento in cui è avvenuto l'evento in questo caso l'immagine creata nella funzione createMyCards
+        overlay.classList.remove("d-none");
+        myButton.classList.remove("d-none");
 
-    element = renderedImage
+        // creo il blocco di codice dove inserire e renderizzare l'immagine selezionata all'interno dell'overlay
+        overlay.innerHTML = `<div class="overlayImage">
+                <img src="${event.target.src}" alt="" class="img-fluid">
+            </div>`;
+    }
 });
 
-
-
 // al click del bottone si chiude l'overlay
-myButton.addEventListener("click", (element) => {
-overlay.classList.add("d-none");
-myButton.classList.add("d-none");
-
-element = myButton;
+myButton.addEventListener("click", () => {
+    overlay.classList.add("d-none");
+    myButton.classList.add("d-none");
 });
 
