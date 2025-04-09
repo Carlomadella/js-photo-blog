@@ -1,16 +1,17 @@
 // mi creo le variabili che richiamano elementi del dom
-const card =  document.getElementById("cards")
+const card =  document.getElementById("cards") // The HTML DOM document object is the owner of all other objects in your web page.
 const overlay = document.getElementById("overlay")
 const myButton = document.getElementById("button")
 const renderedImage = document.getElementById("cardImage")
 
 // creata richiesta AJAX
-axios.get("https://lanciweb.github.io/demo/api/pictures/").then((resp) =>{
-    // salvo in una variabile i dati che ricevo dalla richiesta API
-    let cardContent= resp.data
+axios.get("https://lanciweb.github.io/demo/api/pictures/").then((resp) =>{ // Promise.then() takes two arguments, a callback for success and another for failure. Both are optional, so you can add a callback for success or failure only.
+    
+    // salvo in una variabile i dati che ricevo dalla API
+    let cardContent = resp.data
 
     // inizializzo la funzione per la creazione delle card 
-    const createMyCards = (cardContent) => {
+    const createMyCards = (cardContent) => { // uso come parametro cardContent che contiene i dati ricevuti dalla richiesta
     let myCard = `<div class="col-lg-3 col-md-5 col-sm-12 mx-3 my-3 myCard bg-white">
                 <div class="image">
                     <img class="pin" src="./img/pin.svg" alt="">

@@ -5,17 +5,19 @@
 }
 
 header{
-    text-align: center;
-    background-image: url(../img/wall.png);
+    text-align: center; /* centra orizzontalmente l'h1 */
+    background-image: url(../img/wall.png); /* immagine grigia di sottofondo */
 }
 
-#titolo{
+/* stilizziamo l'h1 */
+#titolo{ 
     font-family: "Edu Tas Beginner", sans-serif;
     font-size: 70px;
     font-weight: 800;
-    margin-bottom: 0;
+    margin-bottom: 0; /* per contrastare le regole css date da Bootstrap */
 }
 
+/* stilizzo le date delle card */
 p{
     font-family: "Sometype Mono", "monospace";
     font-size: 15px;
@@ -23,6 +25,7 @@ p{
     margin-bottom: 0;
 }
 
+/* stilizzo le descrizioni delle foto */
 h5{
     font-family: "Edu Tas Beginner", sans-serif;
     font-size: 30px;
@@ -30,28 +33,25 @@ h5{
     margin-bottom: 0;
 }
 
+/* inserisco un immagine di sottofondo al main */
 main{
     background-image: url(../img/cork.png);
 }
 
-.col-3{
-    height: 350px;
-}
+/* qua c'era l'altezza fissa di 350px alle card ma non serve */
 
+/* stilizzo il div che contiene la foto e il pin rosso */
 .image{
-    height: 70%;
-    position:relative;
+    position:relative; /* gli do relative perchè genitore della foto del pin rosso */
 }
 
-.text{
-    height: 30%;
-}
+/* tolto le altezze percentuali a image e text */
 
 img{
     width: 100%;
     height: 100%;
 }
-
+/* stilizziamo la foto del pin rosso */
 .pin{
     position:absolute;
     height: 25px;
@@ -62,34 +62,28 @@ img{
 
 /* OVERLAY */
 #overlay {
-    position: fixed; /* Sit on top of the page content */
+    position: fixed; /* così quando si scrolla rimane al centro della pagina, il suo relative è la viewport */
     width: 60%; 
     height: 80%;
     border: 10px solid white;
-    top: 13%;
+    top: 13%; /* se mettessi a top, bottom, left e right 0 l'elemento comparirebbe in alto a sinistra dello schermo */
     left: 20%;
-    background-color: rgba(0,0,0,0.5);
-    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    z-index: 2; /* diamo il valore 2 così sta davanti (copre) gli altri elementi nella viewport che di default hanno valore 1*/
 }
 
-/* Contenitore dell'immagine mostrata nell'overlay*/
+/* Contenitore dell'immagine mostrata nell'overlay (creato su js)*/
 .overlayImage {
-    max-width: 100%;
+    max-width: 100%; /* questo div deve coprire tutta la grandezza del contenitore .overlay, sia in altezza che in larghezza */
     max-height: 100%;
-    display: flex;
-    justify-content: center;
+    display: flex; /* per centrare l'immagine all'interno del div */
+    justify-content: center; 
     align-items: center;
-    overflow: hidden; /* Impedisce che il contenuto esca dai bordi */
+    overflow: hidden; /* Impedisce che l'immagine esca dai bordi */
 }
 
-/* Immagine all'interno dell'overlay */
-.overlayImage img {
-    width: auto;
-    height: auto;
-    max-width: 100%; 
-    max-height: 100%; 
-}
+/* non serve stilizzare direttamente l'immagine perchè lo abbiamo già fatto in precedenza a riga 50 */
 
+/* stilizziamo il bottone che ci permette di chiudere l'overlay */
 #button{
     border: none;
     background-color: red;
@@ -98,11 +92,11 @@ img{
     height: 5%;
     top: 95%;
     left: 43%;
-    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    z-index: 2;
 }
 
 /* MEDIA QUERIES */
-
+/* stilizzato l'h1 in base alla grandezza della viewport */
 @media screen and (max-width: 768px) {
     #titolo{
         font-family: "Edu Tas Beginner", sans-serif;
